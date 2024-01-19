@@ -5,6 +5,7 @@ export default component$(() => {
   return (
     <div>
       <h1>Main Contents</h1>
+      <div style={{height: 10000, background: "red"}}>long test</div>
     </div>
   );
 });
