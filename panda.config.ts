@@ -14,7 +14,17 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      tokens: {
+        colors: {
+          background: { value: "#333333" },
+          primary: { value: "#252525" },
+          accent: { value: "#34d399" },
+          text: { value: "#efefef" },
+          border: { value: "#5a5a5a" },
+        },
+      },
+    },
   },
 
   // The output directory for your css system

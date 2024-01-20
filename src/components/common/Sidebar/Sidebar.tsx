@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import Image from "~/media/icon.png?jsx";
 import { css } from "~/styled-system/css";
+import { Input } from "../Input";
 
 export const Sidebar = component$(() => {
   return (
@@ -13,7 +14,10 @@ export const Sidebar = component$(() => {
           width: "15rem",
           height: "100vh",
           padding: "0.5rem",
-          backgroundColor: "#252525",
+          backgroundColor: "primary",
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
         })}
       >
         <div class={css({ display: "flex", alignItems: "center", gap: 2 })}>
@@ -22,6 +26,7 @@ export const Sidebar = component$(() => {
             Turbo Docs
           </h1>
         </div>
+        <Input />
       </div>
     </div>
   );
