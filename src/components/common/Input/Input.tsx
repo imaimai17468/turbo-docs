@@ -2,10 +2,16 @@ import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { LuSearch } from "@qwikest/icons/lucide";
 
-export const Input = component$(() => {
+type Props = {
+  placeholder?: string;
+};
+
+export const Input = component$<Props>(({placeholder}) => {
   return (
     <div class={css({ position: "relative" })}>
       <input
+        type="text"
+        placeholder={placeholder}
         class={css({
           padding: "0.5rem 0.5rem 0.5rem 2rem",
           fontSize: "1rem",

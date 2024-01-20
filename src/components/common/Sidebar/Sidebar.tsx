@@ -26,7 +26,7 @@ export const Sidebar = component$(() => {
             Turbo Docs
           </h1>
         </div>
-        <Input />
+        <Input placeholder="search" />
       </div>
     </div>
   );
