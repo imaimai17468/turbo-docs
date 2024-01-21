@@ -15,7 +15,8 @@ export const Input = component$<Props>(({placeholder}) => {
         class={css({
           padding: "0.5rem 0.5rem 0.5rem 2rem",
           fontSize: "1rem",
-          border: "1px solid #5a5a5a",
+          borderWidth: "1px",
+          borderColor: "border",
           borderRadius: "0.25rem",
           backgroundColor: "primary",
           color: "text",
