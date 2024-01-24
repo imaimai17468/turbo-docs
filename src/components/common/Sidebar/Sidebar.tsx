@@ -2,10 +2,11 @@ import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { Input } from "../Input";
 import { Button } from "../Button";
-import { LuSettings, LuPlusCircle } from "@qwikest/icons/lucide";
+import { LuSettings } from "@qwikest/icons/lucide";
 import { Logo } from "../Logo";
 import { SidebarMenu } from "./SidebarMenu";
 import { SidebarFooter } from "./SidebarFooter";
+import { PostCreateButton } from "./PostCreateButton";
 
 export const Sidebar = component$(() => {
   return (
@@ -32,19 +33,7 @@ export const Sidebar = component$(() => {
           })}
         >
           <Logo />
-          <Button corner="rounded" outlined variant="accent">
-            <div
-              class={css({
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "0.5rem",
-              })}
-            >
-              <LuPlusCircle />
-              <p>CREATE</p>
-            </div>
-          </Button>
+          <PostCreateButton />
           <Input placeholder="search" />
           <SidebarMenu />
           <hr class={css({ borderColor: "border" })} />
