@@ -1,12 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { TopPageContent } from "~/components/feature/top/TopPageContent";
 
 export default component$(() => {
-  return (
-    <div>
-      <h1>Main Contents</h1>
-    </div>
-  );
+  return <TopPageContent />;
 });
 
 export const head: DocumentHead = {
