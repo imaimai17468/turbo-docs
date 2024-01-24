@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import Image from "~/media/icon.png?jsx";
 import { css } from "~/styled-system/css";
 import { Input } from "../Input";
 import { Button } from "../Button";
@@ -11,6 +10,7 @@ import {
   LuTrash,
   LuPlusCircle,
 } from "@qwikest/icons/lucide";
+import { Logo } from "../Logo";
 
 export const Sidebar = component$(() => {
   return (
@@ -36,18 +36,7 @@ export const Sidebar = component$(() => {
             gap: "1rem",
           })}
         >
-          <div
-            class={css({
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-            })}
-          >
-            <Image style={{ width: "48px" }} />
-            <h1 class={css({ fontSize: "1.5rem", fontWeight: "bold" })}>
-              Turbo Docs
-            </h1>
-          </div>
+          <Logo />
           <Button corner="rounded" outlined variant="accent">
             <div
               class={css({
