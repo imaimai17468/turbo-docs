@@ -20,6 +20,7 @@ export default defineConfig({
           background: { value: "#333333" },
           primary: { value: "#252525" },
           accent: { value: "#34d399" },
+          accent_hover: { value: "#2ca886" },
           text: { value: "#efefef" },
           border: { value: "#5a5a5a" },
         },
