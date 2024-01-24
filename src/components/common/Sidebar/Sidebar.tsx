@@ -8,7 +8,7 @@ import {
   LuPlusCircle,
 } from "@qwikest/icons/lucide";
 import { Logo } from "../Logo";
-import { SidebarMenu } from "./SidebarMenu/SidebarMenu";
+import { SidebarMenu } from "./SidebarMenu";
 
 export const Sidebar = component$(() => {
   return (
