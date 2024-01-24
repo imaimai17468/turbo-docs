@@ -1,22 +1,15 @@
 import { component$ } from "@builder.io/qwik";
-import { css } from "~/styled-system/css";
 import { Button } from "../../Button";
 import { LuSettings } from "@qwikest/icons/lucide";
+import { HStack } from "~/components/layout/HStack";
 
 export const SettingButton = component$(() => {
   return (
     <Button corner="rounded" outlined={false} variant="background">
-      <div
-        class={css({
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "start",
-          gap: "0.5rem",
-        })}
-      >
+      <HStack gap="sm" alignItems="center" justifyContent="start">
         <LuSettings />
         <p>Settings</p>
-      </div>
+      </HStack>
     </Button>
   );
 });

@@ -6,6 +6,7 @@ import { SidebarMenu } from "./SidebarMenu";
 import { SidebarFooter } from "./SidebarFooter";
 import { PostCreateButton } from "./PostCreateButton";
 import { SettingButton } from "./SettingButton";
+import { VStack } from "~/components/layout/VStack";
 
 export const Sidebar = component$(() => {
   return (
@@ -24,20 +25,14 @@ export const Sidebar = component$(() => {
           justifyContent: "space-between",
         })}
       >
-        <div
-          class={css({
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-          })}
-        >
+        <VStack gap="md" justifyContent="normal" alignItems="normal">
           <Logo />
           <PostCreateButton />
           <Input placeholder="search" />
           <SidebarMenu />
           <hr class={css({ borderColor: "border" })} />
           <SettingButton />
-        </div>
+        </VStack>
         <SidebarFooter />
       </div>
     </div>

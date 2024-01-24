@@ -2,48 +2,28 @@ import { component$ } from "@builder.io/qwik";
 import { Button } from "../../Button";
 import { css } from "~/styled-system/css";
 import { LuTag, LuBook, LuTrash } from "@qwikest/icons/lucide";
+import { HStack } from "~/components/layout/HStack";
 
 export const SidebarMenu = component$(() => {
   return (
     <div class={css({ display: "flex", flexDirection: "column" })}>
       <Button corner="square" outlined={false} variant="background">
-        <div
-          class={css({
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "start",
-            gap: "0.5rem",
-          })}
-        >
+        <HStack gap="sm" alignItems="center" justifyContent="start">
           <LuTag />
           <p>Tags</p>
-        </div>
+        </HStack>
       </Button>
       <Button corner="rounded" outlined={false} variant="background">
-        <div
-          class={css({
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "start",
-            gap: "0.5rem",
-          })}
-        >
+        <HStack gap="sm" alignItems="center" justifyContent="start">
           <LuBook />
           <p>Bookmark</p>
-        </div>
+        </HStack>
       </Button>
       <Button corner="rounded" outlined={false} variant="background">
-        <div
-          class={css({
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "start",
-            gap: "0.5rem",
-          })}
-        >
+        <HStack gap="sm" alignItems="center" justifyContent="start">
           <LuTrash />
           <p>Trash</p>
-        </div>
+        </HStack>
       </Button>
     </div>
   );
