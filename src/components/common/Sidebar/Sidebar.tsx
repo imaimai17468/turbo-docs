@@ -115,7 +115,7 @@ export const Sidebar = component$(() => {
           })}
         >
           <p class={css({ fontSize: "0.75rem", color: "text" })}>
-            Turbo Docs v0.1.0
+            Turbo Docs v0.0.1
           </p>
           <Button corner="rounded" outlined={false} variant="background">
             <LuGithub />
