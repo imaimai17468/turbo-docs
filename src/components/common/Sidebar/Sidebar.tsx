@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
-import { Input } from "../Input";
+import { Input } from "~/components/ui/Input";
 import { Logo } from "../Logo";
 import { SidebarMenu } from "./SidebarMenu";
 import { SidebarFooter } from "./SidebarFooter";

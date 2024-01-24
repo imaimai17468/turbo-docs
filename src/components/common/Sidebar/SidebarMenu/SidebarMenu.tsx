@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { Button } from "../../Button";
+import { Button } from "~/components/ui/Button";
 import { css } from "~/styled-system/css";
 import { LuTag, LuBook, LuTrash } from "@qwikest/icons/lucide";
 import { HStack } from "~/components/layout/HStack";
