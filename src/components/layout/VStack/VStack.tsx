@@ -2,7 +2,7 @@ import { component$, Slot } from "@builder.io/qwik";
 import { cva } from "~/styled-system/css";
 
 type Props = {
-  gap: "xs" | "sm" | "md" | "lg";
+  gap: "none" | "sm" | "md" | "lg";
   justifyContent: "start" | "center" | "end" | "between" | "around";
   alignItems: "start" | "center" | "end" | "stretch";
 };
@@ -14,7 +14,7 @@ const VStackStyle = cva({
   },
   variants: {
     gap: {
-      xs: { gap: "0.25rem" },
+      none: { gap: "0" },
       sm: { gap: "0.5rem" },
       md: { gap: "1rem" },
       lg: { gap: "2rem" },
