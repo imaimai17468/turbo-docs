@@ -3,14 +3,12 @@ import { css } from "~/styled-system/css";
 import { Input } from "../Input";
 import { Button } from "../Button";
 import {
-  LuTag,
-  LuBook,
   LuSettings,
   LuGithub,
-  LuTrash,
   LuPlusCircle,
 } from "@qwikest/icons/lucide";
 import { Logo } from "../Logo";
+import { SidebarMenu } from "./SidebarMenu/SidebarMenu";
 
 export const Sidebar = component$(() => {
   return (
@@ -51,47 +49,7 @@ export const Sidebar = component$(() => {
             </div>
           </Button>
           <Input placeholder="search" />
-          <div class={css({ display: "flex", flexDirection: "column" })}>
-            <Button corner="square" outlined={false} variant="background">
-              <div
-                class={css({
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "start",
-                  gap: "0.5rem",
-                })}
-              >
-                <LuTag />
-                <p>Tags</p>
-              </div>
-            </Button>
-            <Button corner="rounded" outlined={false} variant="background">
-              <div
-                class={css({
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "start",
-                  gap: "0.5rem",
-                })}
-              >
-                <LuBook />
-                <p>Bookmark</p>
-              </div>
-            </Button>
-            <Button corner="rounded" outlined={false} variant="background">
-              <div
-                class={css({
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "start",
-                  gap: "0.5rem",
-                })}
-              >
-                <LuTrash />
-                <p>Trash</p>
-              </div>
-            </Button>
-          </div>
+          <SidebarMenu />
           <hr class={css({ borderColor: "border" })} />
           <Button corner="rounded" outlined={false} variant="background">
             <div
