@@ -3,8 +3,8 @@ import { cva } from "~/styled-system/css";
 
 type Props = {
   gap: "none" | "sm" | "md" | "lg";
-  justifyContent: "start" | "center" | "end" | "between" | "around";
-  alignItems: "start" | "center" | "end" | "stretch";
+  justifyContent: "start" | "center" | "end" | "between" | "around" | "normal";
+  alignItems: "start" | "center" | "end" | "stretch" | "normal";
 };
 
 const VStackStyle = cva({
@@ -25,12 +25,14 @@ const VStackStyle = cva({
       end: { justifyContent: "end" },
       between: { justifyContent: "space-between" },
       around: { justifyContent: "space-around" },
+      normal: { justifyContent: "normal" },
     },
     alignItems: {
       start: { alignItems: "start" },
       center: { alignItems: "center" },
       end: { alignItems: "end" },
       stretch: { alignItems: "stretch" },
+      normal: { alignItems: "normal" },
     },
   },
 });
