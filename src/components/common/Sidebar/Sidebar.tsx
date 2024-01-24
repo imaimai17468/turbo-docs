@@ -47,7 +47,7 @@ export const Sidebar = component$(() => {
               })}
             >
               <LuPlusCircle />
-              <p>Create</p>
+              <p>CREATE</p>
             </div>
           </Button>
           <Input placeholder="search" />
