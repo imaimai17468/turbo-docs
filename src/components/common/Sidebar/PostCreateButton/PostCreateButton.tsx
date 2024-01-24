@@ -1,11 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { Button } from "../../Button";
-import { LuSettings } from "@qwikest/icons/lucide";
+import { LuPlusCircle } from "@qwikest/icons/lucide";
 
 export const PostCreateButton = component$(() => {
   return (
-    <Button corner="rounded" outlined={false} variant="background">
+    <Button corner="rounded" outlined variant="accent">
       <div
         class={css({
           display: "flex",
@@ -14,8 +14,8 @@ export const PostCreateButton = component$(() => {
           gap: "0.5rem",
         })}
       >
-        <LuSettings />
-        <p>Settings</p>
+        <LuPlusCircle />
+        <p>CREATE</p>
       </div>
     </Button>
   );
