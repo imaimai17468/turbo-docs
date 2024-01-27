@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { HStack } from "~/components/layout/HStack";
+import { HStack } from "~/styled-system/jsx";
 import Image from "~/media/icon.png?jsx";
 import { css } from "~/styled-system/css";
 

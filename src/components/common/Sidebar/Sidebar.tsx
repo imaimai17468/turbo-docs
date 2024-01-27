@@ -6,11 +6,11 @@ import { SidebarMenu } from "./SidebarMenu";
 import { SidebarFooter } from "./SidebarFooter";
 import { PostCreateButton } from "./PostCreateButton";
 import { SettingButton } from "./SettingButton";
-import { VStack } from "~/components/layout/VStack";
+import { VStack } from "~/styled-system/jsx";
 
 export const Sidebar = component$(() => {
   return (
-    <div class={css({ width: "15rem" })}>
+    <div class={css({ width: "15rem", flexShrink: 0 })}>
       <div
         class={css({
           position: "fixed",
@@ -25,12 +25,11 @@ export const Sidebar = component$(() => {
           justifyContent: "space-between",
         })}
       >
-        <VStack gap="md" justifyContent="normal" alignItems="normal">
+        <VStack gap="1rem" alignItems="start">
           <Logo />
           <PostCreateButton />
           <Input placeholder="search" />
           <SidebarMenu />
-          <hr class={css({ borderColor: "border" })} />
           <SettingButton />
         </VStack>
         <SidebarFooter />

@@ -1,12 +1,13 @@
 import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { LuPlusCircle } from "@qwikest/icons/lucide";
-import { HStack } from "~/components/layout/HStack";
+import { HStack } from "~/styled-system/jsx";
 
 export const PostCreateButton = component$(() => {
   return (
     <button
       class={css({
+        width: "100%",
         backgroundColor: "accent",
         padding: "0.5rem 1rem",
         borderRadius: "0.25rem",
@@ -15,7 +16,7 @@ export const PostCreateButton = component$(() => {
         _hover: { backgroundColor: "accent_hover" },
       })}
     >
-      <HStack gap="sm" alignItems="center" justifyContent="start">
+      <HStack gap="0.5rem" alignItems="center" justifyContent="start">
         <LuPlusCircle />
         <p class={css({ fontWeight: "bold", color: "primary" })}>CREATE</p>
       </HStack>
