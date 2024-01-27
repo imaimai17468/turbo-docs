@@ -23,6 +23,8 @@ export default defineConfig({
           accent: { value: "#34d399" },
           accent_hover: { value: "#2ca886" },
           text: { value: "#efefef" },
+          text_black: { value: "#252525" },
+          text_gray: { value: "#5a5a5a" },
           border: { value: "#5a5a5a" },
         },
       },
