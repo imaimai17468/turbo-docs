@@ -6,7 +6,7 @@ export const MainLayout = component$(() => {
   return (
     <div class={css({ display: "flex" })}>
       <Sidebar />
-      <div class={css({ padding: "2rem" })}>
+      <div class={css({ padding: "2rem", width: "100%" })}>
         <Slot />
       </div>
     </div>
