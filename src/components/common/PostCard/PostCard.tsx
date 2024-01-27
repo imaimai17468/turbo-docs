@@ -1,8 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import dayjs from "dayjs";
-import { LuFilePlus } from "@qwikest/icons/lucide";
-import { HStack } from "~/styled-system/jsx";
+import { LuBookmark, LuMenu, LuTimer } from "@qwikest/icons/lucide";
+import { HStack, VStack } from "~/styled-system/jsx";
 
 type Props = {
   title: string;
@@ -10,8 +10,9 @@ type Props = {
 };
 
 export const PostCard = component$<Props>(({ title, lastModifiedAt }) => (
-  <button
+  <div
     class={css({
+      color: "text_black",
       width: "100%",
       height: "8rem",
       backgroundColor: "background_white",
@@ -22,10 +23,18 @@ export const PostCard = component$<Props>(({ title, lastModifiedAt }) => (
       flexDirection: "column",
     })}
   >
-    <h2>{title}</h2>
-    <HStack>
-      <LuFilePlus />
-      <p>{dayjs(lastModifiedAt).format("YYYY MM DD")}</p>
+    <VStack gap="0.25rem" alignItems="start" flexGrow="1">
+      <h2>{title}</h2>
+      <HStack gap="0.25rem" class={css({ fontSize: "0.75rem" })}>
+        <LuTimer />
+        <p class={css({ color: "text_gray" })}>
+          {dayjs(lastModifiedAt).format("YYYY MM DD")}
+        </p>
+      </HStack>
+    </VStack>
+    <HStack justifyContent="end">
+      <LuBookmark />
+      <LuMenu />
     </HStack>
-  </button>
+  </div>
 ));
