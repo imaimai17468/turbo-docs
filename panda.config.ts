@@ -18,6 +18,7 @@ export default defineConfig({
       tokens: {
         colors: {
           background: { value: "#333333" },
+          background_white: { value: "#efefef" },
           primary: { value: "#252525" },
           accent: { value: "#34d399" },
           accent_hover: { value: "#2ca886" },
