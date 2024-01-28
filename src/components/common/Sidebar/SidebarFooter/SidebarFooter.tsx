@@ -7,12 +7,20 @@ import { HStack } from "~/styled-system/jsx";
 export const SidebarFooter = component$(() => {
   return (
     <HStack gap="0.5rem" alignItems="center" justifyContent="start">
-      <p class={css({ fontSize: "0.75rem", color: "text" })}>
+      <p
+        class={css({
+          fontSize: "0.75rem",
+          color: "text",
+          whiteSpace: "nowrap",
+        })}
+      >
         Turbo Docs v0.0.1
       </p>
-      <Button corner="rounded" outlined={false} variant="background">
-        <LuGithub />
-      </Button>
+      <div class={css({ width: "fit-content" })}>
+        <Button corner="rounded" outlined={false} variant="background">
+          <LuGithub />
+        </Button>
+      </div>
     </HStack>
   );
 });
