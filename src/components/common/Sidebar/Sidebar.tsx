@@ -30,6 +30,7 @@ export const Sidebar = component$(() => {
           <PostCreateButton />
           <Input placeholder="search" />
           <SidebarMenu />
+          <div class={css({height: "1px", width: "100%", borderTop: "1px solid #5a5a5a"})} />
           <SettingButton />
         </VStack>
         <SidebarFooter />
