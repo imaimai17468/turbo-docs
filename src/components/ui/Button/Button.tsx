@@ -7,6 +7,7 @@ const buttonStyle = cva({
     padding: "0.5rem 1rem",
     transition: "all 0.2s ease",
     cursor: "pointer",
+    width: "100%",
     _hover: { backgroundColor: "accent", color: "primary" },
   },
   variants: {

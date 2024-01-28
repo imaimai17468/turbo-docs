@@ -6,7 +6,7 @@ import { HStack } from "~/styled-system/jsx";
 
 export const SidebarMenu = component$(() => {
   return (
-    <div class={css({ display: "flex", flexDirection: "column" })}>
+    <div class={css({ display: "flex", flexDirection: "column", width: "100%" })}>
       <Button corner="square" outlined={false} variant="background">
         <HStack gap="0.5rem">
           <LuTag />
