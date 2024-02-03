@@ -1,8 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { PostContent } from "~/components/feature/post/PostContent";
 
 export default component$(() => {
-  return <p>post page</p>;
+  return <PostContent />;
 });
 
 export const head: DocumentHead = {
