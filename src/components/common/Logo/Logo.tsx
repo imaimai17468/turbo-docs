@@ -3,7 +3,7 @@ import { HStack } from "~/styled-system/jsx";
 import Image from "~/media/icon.png?jsx";
 import { css } from "~/styled-system/css";
 import { Link } from "@builder.io/qwik-city";
-import { CLIENT_PATH } from "~/components/constants/clientPath";
+import { CLIENT_PATH } from "~/constants/clientPath";
 
 export const Logo = component$(() => {
   return (

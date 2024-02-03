@@ -3,7 +3,7 @@ import { css } from "~/styled-system/css";
 import dayjs from "dayjs";
 import { LuBookmark, LuMenu, LuTimer } from "@qwikest/icons/lucide";
 import { HStack, VStack } from "~/styled-system/jsx";
-import { CLIENT_PATH } from "~/components/constants/clientPath";
+import { CLIENT_PATH } from "~/constants/clientPath";
 import { Link } from "@builder.io/qwik-city";
 
 type Props = {
