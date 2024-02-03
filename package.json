@@ -51,6 +51,7 @@
     "lint-staged": "^15.2.0"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "prettier --write . && eslint --fix \"src/**/*.ts*\""
+    "*.{ts, tsx}": "eslint --fix",
+    "*": "prettier --write"
   }
 }
