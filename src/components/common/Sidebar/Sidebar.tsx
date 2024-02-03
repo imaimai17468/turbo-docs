@@ -6,7 +6,7 @@ import { SidebarMenu } from "./SidebarMenu";
 import { SidebarFooter } from "./SidebarFooter";
 import { PostCreateButton } from "./PostCreateButton";
 import { SettingButton } from "./SettingButton";
-import { VStack } from "~/styled-system/jsx";
+import { Divider, VStack } from "~/styled-system/jsx";
 
 export const Sidebar = component$(() => {
   return (
@@ -30,7 +30,7 @@ export const Sidebar = component$(() => {
           <PostCreateButton />
           <Input placeholder="search" />
           <SidebarMenu />
-          <div class={css({height: "1px", width: "100%", borderTop: "1px solid #5a5a5a"})} />
+          <Divider borderColor="border" />
           <SettingButton />
         </VStack>
         <SidebarFooter />
