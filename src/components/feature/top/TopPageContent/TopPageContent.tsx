@@ -6,6 +6,7 @@ export const TopPageContent = component$(() => {
   return (
     <div
       class={css({
+        padding: "2rem",
         width: "100%",
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(16rem,1fr))",
@@ -13,7 +14,11 @@ export const TopPageContent = component$(() => {
       })}
     >
       {Array.from({ length: 10 }).map((_, i) => (
-        <PostCard key={i} title={`test post ${i}`} lastModifiedAt={new Date()} />
+        <PostCard
+          key={i}
+          title={`test post ${i}`}
+          lastModifiedAt={new Date()}
+        />
       ))}
     </div>
   );
