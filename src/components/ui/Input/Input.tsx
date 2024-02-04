@@ -6,7 +6,7 @@ type Props = {
   placeholder?: string;
 };
 
-export const Input = component$<Props>(({placeholder}) => {
+export const Input = component$<Props>(({ placeholder }) => {
   return (
     <div class={css({ position: "relative" })}>
       <input
