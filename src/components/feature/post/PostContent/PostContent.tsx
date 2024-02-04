@@ -3,6 +3,7 @@ import { css } from "~/styled-system/css";
 import { Divider, VStack } from "~/styled-system/jsx";
 import { PostTitleInput } from "./PostTitleInput";
 import { PostTagListInput } from "./PostTagListInput";
+import { PostEditor } from "./PostEditor";
 
 export const PostContent = component$(() => {
   return (
@@ -10,6 +11,7 @@ export const PostContent = component$(() => {
       <PostTitleInput />
       <PostTagListInput />
       <Divider borderColor="border" />
+      <PostEditor />
     </VStack>
   );
 });
