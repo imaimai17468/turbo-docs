@@ -1,42 +1,57 @@
 import { component$, useComputed$, useSignal } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { HStack } from "~/styled-system/jsx";
+import { Marked } from "marked";
+import DOMPurify from "isomorphic-dompurify";
+import style from "./PostEditor.module.scss";
+import { mangle } from "marked-mangle";
+import hljs from "highlight.js";
+import "highlight.js/styles/github-dark.css";
+import { markedHighlight } from "marked-highlight";
 
 export const PostEditor = component$(() => {
-  const elementString = useSignal<string>();
-  const html = useComputed$(() => {
-    if (!elementString.value) return;
-    const divider = elementString.value
-      .split("<div>")
-      .map((item) => "<div>" + item.replace(/<br>|<\/div>/g, "") + "</div>");
-    const mdParser = divider
-      .map((item) => {
-        return item
-          .replace(/### (.+)/g, "<h3 style='font-size:1.5rem'>$1</h3>")
-          .replace(/## (.+)/g, "<h2 style='font-size:2rem'>$1</h2>")
-          .replace(/# (.+)/g, "<h1 style='font-size:3rem'>$1</h1>")
-          .replace(/\*\*(.+)\*\*/g, "<b>$1</b>")
-          .replace(/~~(.+)~~/g, "<s>$1</s>");
-      })
-      .join("");
+  const rawText = useSignal<string>("");
+  const markdown = useComputed$(async () => {
+    const marked = new Marked(
+      markedHighlight({
+        langPrefix: "hljs language-",
+        highlight(code, lang) {
+          if (typeof lang === "string" && lang.includes(":")) {
+            lang = lang.substring(0, lang.indexOf(":"));
+          }
+          const language = hljs.getLanguage(lang) ? lang : "plaintext";
+          return hljs.highlight(code, { language }).value;
+        },
+      }),
+    );
 
-    console.log(mdParser);
-    return mdParser;
+    const renderer = new marked.Renderer();
+    renderer.blockquote = (quote) => {
+      const quotes = quote
+        .split("\n")
+        .map((q) => "<p>" + q.replace(/<p>|<\/p>/g, "") + "</p>")
+        .join("");
+      return `<blockquote>${quotes}</blockquote>`;
+    };
+    marked.use(mangle()).use({ renderer });
+
+    const markedText = await marked.parse(rawText.value);
+    return DOMPurify.sanitize(markedText);
   });
 
   return (
     <HStack width="100%" height="83vh" alignItems="start">
-      <div
-        contentEditable="true"
+      <textarea
         class={css({
           width: "50%",
           height: "100%",
+          backgroundColor: "background",
+          color: "text",
           _focus: {
             outline: "none",
           },
-          overflow: "scroll",
         })}
-        onInput$={(_, el) => (elementString.value = el.innerHTML)}
+        bind:value={rawText}
       />
       <div
         class={css({
@@ -45,7 +60,7 @@ export const PostEditor = component$(() => {
           borderColor: "border",
         })}
       />
-      <div class={css({ width: "50%" })} dangerouslySetInnerHTML={html.value} />
+      <div dangerouslySetInnerHTML={markdown.value} class={style.editor} />
     </HStack>
   );
 });
