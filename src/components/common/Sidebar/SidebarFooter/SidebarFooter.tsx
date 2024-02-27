@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import { Button } from "~/components/ui/Button";
 import { css } from "~/styled-system/css";
 import { LuGithub } from "@qwikest/icons/lucide";
 import { HStack } from "~/styled-system/jsx";
@@ -17,14 +16,14 @@ export const SidebarFooter = component$(() => {
         Turbo Docs v0.0.1
       </p>
       <div class={css({ width: "fit-content" })}>
-        <Button
-          corner="rounded"
-          outlined={false}
-          variant="background"
-          areaLabel="GitHub Repository"
+        <a
+          href="https://github.com/imaimai17468/turbo-docs-web"
+          title="GitHub Repository"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           <LuGithub />
-        </Button>
+        </a>
       </div>
     </HStack>
   );
