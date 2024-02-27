@@ -9,7 +9,7 @@ export const Logo = component$(() => {
   return (
     <Link href={CLIENT_PATH.index}>
       <HStack gap="sm" alignItems="center" justifyContent="center">
-        <Image style={{ width: "48px" }} />
+        <Image style={{ width: "48px" }} alt="turbo docs logo image" />
         <h1 class={css({ fontSize: "1.5rem", fontWeight: "bold" })}>
           Turbo Docs
         </h1>
