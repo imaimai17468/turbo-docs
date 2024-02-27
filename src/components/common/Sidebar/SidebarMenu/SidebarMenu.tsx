@@ -13,7 +13,7 @@ export const SidebarMenu = component$(() => {
         corner="square"
         outlined={false}
         variant="background"
-        area-label="Tags"
+        areaLabel="Tags"
       >
         <HStack gap="0.5rem">
           <LuTag />
@@ -24,7 +24,7 @@ export const SidebarMenu = component$(() => {
         corner="rounded"
         outlined={false}
         variant="background"
-        area-label="Bookmark"
+        areaLabel="Bookmark"
       >
         <HStack gap="0.5rem">
           <LuBook />
@@ -35,7 +35,7 @@ export const SidebarMenu = component$(() => {
         corner="rounded"
         outlined={false}
         variant="background"
-        area-label="Trash"
+        areaLabel="Trash"
       >
         <HStack gap="0.5rem">
           <LuTrash />

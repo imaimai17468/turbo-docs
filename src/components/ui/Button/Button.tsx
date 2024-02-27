@@ -40,12 +40,18 @@ type Props = {
   corner: "square" | "rounded";
   outlined: boolean;
   variant: "primary" | "background" | "accent";
+  areaLabel: string;
 };
 
-export const Button = component$<Props>(({ corner, outlined, variant }) => {
-  return (
-    <button class={buttonStyle({ corner, outlined, variant })}>
-      <Slot />
-    </button>
-  );
-});
+export const Button = component$<Props>(
+  ({ corner, outlined, variant, areaLabel }) => {
+    return (
+      <button
+        class={buttonStyle({ corner, outlined, variant })}
+        area-label={areaLabel}
+      >
+        <Slot />
+      </button>
+    );
+  },
+);

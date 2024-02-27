@@ -9,7 +9,7 @@ export const SettingButton = component$(() => {
       corner="rounded"
       outlined={false}
       variant="background"
-      area-label="Settings"
+      areaLabel="Settings"
     >
       <HStack gap="0.5rem">
         <LuSettings />

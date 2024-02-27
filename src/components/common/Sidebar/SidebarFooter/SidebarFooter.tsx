@@ -21,7 +21,7 @@ export const SidebarFooter = component$(() => {
           corner="rounded"
           outlined={false}
           variant="background"
-          area-label="GitHub Repository"
+          areaLabel="GitHub Repository"
         >
           <LuGithub />
         </Button>
