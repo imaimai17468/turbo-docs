@@ -1,7 +1,6 @@
 import { component$, useComputed$, useSignal } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import { HStack } from "~/styled-system/jsx";
-import DOMPurify from "isomorphic-dompurify";
 import style from "./PostEditor.module.scss";
 import "highlight.js/styles/github-dark.css";
 import { markedConfig } from "./markdownConfig";
@@ -10,7 +9,7 @@ export const PostEditor = component$(() => {
   const rawText = useSignal<string>("");
   const markdown = useComputed$(async () => {
     const markedText = await markedConfig.parse(rawText.value);
-    return DOMPurify.sanitize(markedText);
+    return markedText;
   });
 
   return (
