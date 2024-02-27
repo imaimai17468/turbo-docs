@@ -17,7 +17,12 @@ export const SidebarFooter = component$(() => {
         Turbo Docs v0.0.1
       </p>
       <div class={css({ width: "fit-content" })}>
-        <Button corner="rounded" outlined={false} variant="background">
+        <Button
+          corner="rounded"
+          outlined={false}
+          variant="background"
+          area-label="GitHub Repository"
+        >
           <LuGithub />
         </Button>
       </div>

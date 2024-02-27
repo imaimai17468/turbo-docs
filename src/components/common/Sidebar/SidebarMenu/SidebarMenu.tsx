@@ -9,19 +9,34 @@ export const SidebarMenu = component$(() => {
     <div
       class={css({ display: "flex", flexDirection: "column", width: "100%" })}
     >
-      <Button corner="square" outlined={false} variant="background">
+      <Button
+        corner="square"
+        outlined={false}
+        variant="background"
+        area-label="Tags"
+      >
         <HStack gap="0.5rem">
           <LuTag />
           <p>Tags</p>
         </HStack>
       </Button>
-      <Button corner="rounded" outlined={false} variant="background">
+      <Button
+        corner="rounded"
+        outlined={false}
+        variant="background"
+        area-label="Bookmark"
+      >
         <HStack gap="0.5rem">
           <LuBook />
           <p>Bookmark</p>
         </HStack>
       </Button>
-      <Button corner="rounded" outlined={false} variant="background">
+      <Button
+        corner="rounded"
+        outlined={false}
+        variant="background"
+        area-label="Trash"
+      >
         <HStack gap="0.5rem">
           <LuTrash />
           <p>Trash</p>

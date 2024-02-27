@@ -5,7 +5,12 @@ import { HStack } from "~/styled-system/jsx";
 
 export const SettingButton = component$(() => {
   return (
-    <Button corner="rounded" outlined={false} variant="background">
+    <Button
+      corner="rounded"
+      outlined={false}
+      variant="background"
+      area-label="Settings"
+    >
       <HStack gap="0.5rem">
         <LuSettings />
         <p>Settings</p>

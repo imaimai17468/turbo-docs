@@ -15,6 +15,7 @@ export const PostCreateButton = component$(() => {
         transition: "all 0.2s ease",
         _hover: { backgroundColor: "accent_hover" },
       })}
+      area-label="Create Post"
     >
       <HStack gap="0.5rem" alignItems="center" justifyContent="start">
         <LuPlusCircle />
