@@ -37,14 +37,19 @@ const buttonStyle = cva({
 });
 
 type Props = {
-  corner: "square" | "rounded";
-  outlined: boolean;
-  variant: "primary" | "background" | "accent";
+  corner?: "square" | "rounded";
+  outlined?: boolean;
+  variant?: "primary" | "background" | "accent";
   areaLabel: string;
 };
 
 export const Button = component$<Props>(
-  ({ corner, outlined, variant, areaLabel }) => {
+  ({
+    corner = "rounded",
+    outlined = false,
+    variant = "background",
+    areaLabel,
+  }) => {
     return (
       <button
         class={buttonStyle({ corner, outlined, variant })}
