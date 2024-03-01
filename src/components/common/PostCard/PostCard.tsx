@@ -1,11 +1,12 @@
 import { component$ } from "@builder.io/qwik";
 import { css } from "~/styled-system/css";
 import dayjs from "dayjs";
-import { LuMenu, LuTimer } from "@qwikest/icons/lucide";
+import { LuTimer } from "@qwikest/icons/lucide";
 import { HStack, VStack } from "~/styled-system/jsx";
 import { CLIENT_PATH } from "~/constants/clientPath";
 import { Link } from "@builder.io/qwik-city";
 import { BookmarkButton } from "./BookmarkButton";
+import { MenuButton } from "./MenuButton";
 
 type Props = {
   title: string;
@@ -57,7 +58,7 @@ export const PostCard = component$<Props>(({ title, lastModifiedAt }) => (
       })}
     >
       <BookmarkButton />
-      <LuMenu />
+      <MenuButton />
     </HStack>
   </div>
 ));
