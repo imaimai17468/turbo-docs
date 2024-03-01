@@ -9,7 +9,7 @@ export const TopPageContent = component$(() => {
         padding: "2rem",
         width: "100%",
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(16rem,1fr))",
+        gridTemplateColumns: "repeat(auto-fill, minmax(200px,1fr))",
         gap: "2rem",
       })}
     >
