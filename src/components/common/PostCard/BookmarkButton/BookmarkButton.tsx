@@ -1,31 +1,27 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { component$, useSignal, $ } from "@builder.io/qwik";
 import { LuBookmark, LuBookmarkCheck } from "@qwikest/icons/lucide";
+import { Button } from "~/components/ui/Button";
 import { css } from "~/styled-system/css";
 
 export const BookmarkButton = component$(() => {
   const isBookmarked = useSignal(false);
 
+  const handleBookmarkButtonClick = $(() => {
+    isBookmarked.value = !isBookmarked.value;
+  });
+
   return (
-    <button
-      onClick$={() => {
-        isBookmarked.value = !isBookmarked.value;
-      }}
-      class={css({
-        borderRadius: "50%",
-        padding: "0.5rem",
-        transition: "all 0.2s ease",
-        _hover: {
-          background: "#a5a5a5",
-          color: "text",
-        },
-      })}
-      aria-label="Bookmark post"
+    <Button
+      variant="secondary"
+      onClick={handleBookmarkButtonClick}
+      isIcon
+      areaLabel="Bookmark post"
     >
       {isBookmarked.value ? (
         <LuBookmarkCheck class={css({ color: "accent" })} />
       ) : (
         <LuBookmark />
       )}
-    </button>
+    </Button>
   );
 });
