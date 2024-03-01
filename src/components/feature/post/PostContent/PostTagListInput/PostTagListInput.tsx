@@ -23,14 +23,15 @@ export const PostTagListInput = component$(() => {
   });
 
   return (
-    <VStack alignItems="start">
-      <HStack gap="1rem">
+    <VStack alignItems="start" width="100%">
+      <HStack gap="1rem" width="100%">
         <LuTag class={css({ height: "1rem" })} />
         <input
           class={css({
             background: "transparent",
             color: "text",
             fontSize: "1rem",
+            width: "100%",
             _focus: {
               outline: "none",
             },
