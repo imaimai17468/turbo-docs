@@ -1,6 +1,7 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { MainLayout } from "~/components/layout/MainLayout";
+import type { DocumentHead } from "@builder.io/qwik-city";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -20,3 +21,13 @@ export default component$(() => {
     </MainLayout>
   );
 });
+
+export const head: DocumentHead = {
+  title: "Turbo Docs",
+  meta: [
+    {
+      name: "description",
+      content: "Ultra-fast documentation tools.",
+    },
+  ],
+};
