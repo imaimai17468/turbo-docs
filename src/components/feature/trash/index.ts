@@ -1,0 +1,1 @@
+export { TrashContent } from "./TrashContent";

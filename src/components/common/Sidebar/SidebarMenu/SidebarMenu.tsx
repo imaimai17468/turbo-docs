@@ -19,12 +19,14 @@ export const SidebarMenu = component$(() => {
           </HStack>
         </Button>
       </Link>
-      <Button areaLabel="Trash">
-        <HStack gap="0.5rem">
-          <LuTrash />
-          <p>Trash</p>
-        </HStack>
-      </Button>
+      <Link href={CLIENT_PATH.trash}>
+        <Button areaLabel="Trash">
+          <HStack gap="0.5rem">
+            <LuTrash />
+            <p>Trash</p>
+          </HStack>
+        </Button>
+      </Link>
     </div>
   );
 });
