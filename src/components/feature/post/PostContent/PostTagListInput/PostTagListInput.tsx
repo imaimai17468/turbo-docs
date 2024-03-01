@@ -1,19 +1,25 @@
-import { component$, useSignal, useComputed$ } from "@builder.io/qwik";
-import { LuTag } from "@qwikest/icons/lucide";
+import { component$, useSignal, useTask$ } from "@builder.io/qwik";
+import { LuTag, LuX } from "@qwikest/icons/lucide";
 import { css } from "~/styled-system/css";
 import { HStack, VStack } from "~/styled-system/jsx";
 
 export const PostTagListInput = component$(() => {
   const tagText = useSignal<string>();
-  const tagList = useComputed$(() => {
-    if (!tagText.value) return [];
-    const splitTagText = tagText.value.split(" ");
+  const tagList = useSignal<string[]>([]);
 
-    if (splitTagText.length < 1) return [];
+  useTask$(({ track }) => {
+    const text = track(() => tagText.value);
+    if (!text) return;
 
-    const tagList = splitTagText.slice(0, -1);
+    const splitTagText = text.split(" ");
 
-    return tagList;
+    if (splitTagText.length < 1) return;
+
+    const visibleTagList = splitTagText
+      .slice(0, -1)
+      .filter((tag) => tag !== "");
+    const uniqueTags = Array.from(new Set(visibleTagList));
+    tagList.value = uniqueTags;
   });
 
   return (
@@ -36,7 +42,7 @@ export const PostTagListInput = component$(() => {
       {tagList.value.length !== 0 && (
         <HStack>
           {tagList.value.map((tag, index) => (
-            <div
+            <HStack
               key={index}
               class={css({
                 background: "accent",
@@ -46,10 +52,19 @@ export const PostTagListInput = component$(() => {
                 minWidth: "3rem",
                 display: "flex",
                 justifyContent: "center",
+                alignItems: "center",
               })}
             >
               {tag}
-            </div>
+              <button
+                onClick$={() => {
+                  tagList.value = tagList.value.filter((_, i) => i !== index);
+                  tagText.value = tagList.value.join(" ") + " ";
+                }}
+              >
+                <LuX />
+              </button>
+            </HStack>
           ))}
         </HStack>
       )}
