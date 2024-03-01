@@ -36,12 +36,12 @@ export const PostTagListInput = component$(() => {
               outline: "none",
             },
           })}
-          placeholder="Tags"
+          placeholder="TagA TagB TagC..."
           bind:value={tagText}
         />
       </HStack>
       {tagList.value.length !== 0 && (
-        <HStack>
+        <HStack flexWrap="wrap">
           {tagList.value.map((tag, index) => (
             <HStack
               key={index}
